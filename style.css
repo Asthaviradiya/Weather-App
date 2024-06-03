@@ -46,3 +46,50 @@ input[type="text"] {
 .search-btn:hover {
     background-color: #2980b9;
 }
+.city-date-section {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.city-date-section .city {
+    font-size: 2rem;
+    opacity: 0.9;
+}
+
+.city-date-section .date {
+    background-color: #c3eaf4;
+    padding: 5px 10px;
+    border-radius: 15px;
+}
+
+.temperature-info {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.temperature-info .temp {
+    font-size: 10rem;
+}
+
+.temperature-info .description {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.temperature-info .description i {
+    font-size: 1.5rem;
+    opacity: 0.8;
+}
+
+.temperature-info .description span {
+    font-size: 1.5rem;
+}
