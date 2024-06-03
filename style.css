@@ -93,3 +93,31 @@ input[type="text"] {
 .temperature-info .description span {
     font-size: 1.5rem;
 }
+.additional-info {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+.wind-info,
+.humidity-info,
+.visibility-info {
+    background-color: #ecf0f1;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    border-radius: 15px;
+    padding: 30px 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.additional-info .material-icons {
+    font-size: 3rem;
+    opacity: 0.8;
+}
+.wind-info div,
+.humidity-info div,
+.visibility-info div {
+    text-align: center;
+}
