@@ -8,6 +8,9 @@ body {
     background-color: hsl(204, 86%, 23%);
     font-family: Arial, Helvetica, sans-serif;
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .weather-app {
@@ -97,6 +100,7 @@ input[type="text"] {
     margin-top: 20px;
     display: flex;
     justify-content: space-around;
+    gap: 20px;
 }
 .wind-info,
 .humidity-info,
@@ -120,4 +124,110 @@ input[type="text"] {
 .humidity-info div,
 .visibility-info div {
     text-align: center;
+}
+
+/* media query */
+@media screen and (max-width: 768px) {
+    .weather-app {   
+        max-width: 500px;
+    }
+    .temperature-info .temp {
+        font-size: 8rem;
+    }
+    .wind-info, .humidity-info, .visibility-info {
+        width: 120px;
+        
+    }
+}
+@media screen and (max-width: 555px) {
+    .weather-app {   
+        max-width: 450px;
+    }
+    .temperature-info .temp {
+        font-size: 7rem;
+    }
+    .wind-info, .humidity-info, .visibility-info {
+        width: 110px;
+        
+    }
+    .additional-info {
+        gap: 15px;
+    }
+}
+@media screen and (max-width: 430px){
+    .weather-app {   
+        max-width: 400px;
+    }
+    .temperature-info .temp {
+        font-size: 5.4rem;
+    }
+    .temperature-info .description i {
+        font-size: 1.4rem;
+    }
+    .temperature-info .description span {
+        font-size: 1.4rem;
+    }
+    .wind-info, .humidity-info, .visibility-info {
+        width: 104px;
+        padding: 10px 10px;
+    }
+    .additional-info {
+        gap: 15px;
+    }
+}
+@media screen and (max-width: 380px){
+    .weather-app {   
+        max-width: 350px;
+    }
+    .temperature-info .temp {
+        font-size: 5.1rem;
+    }
+    .temperature-info .description i {
+        font-size: 1.3rem;
+    }
+    .temperature-info .description span {
+        font-size: 1.3rem;
+    }
+    .wind-info, .humidity-info, .visibility-info {
+        width: 100px;
+    }
+    .additional-info {
+        gap: 18px;
+    }
+}
+@media screen and (max-width: 325px){
+    .weather-app {   
+        max-width: 300px;
+    }
+    .temperature-info .temp {
+        font-size: 5.1rem;
+    }
+    .temperature-info .description i {
+        font-size: 1.3rem;
+    }
+    .temperature-info .description span {
+        font-size: 1.3rem;
+    }
+    .wind-info, .humidity-info, .visibility-info {
+        width: 100px;
+    }
+    .additional-info {
+        gap: 18px;
+    }
+    input[type="text"] {
+        padding: 2px;
+        height: 3rem;
+    }
+    .search-btn {
+        padding: 10px;
+        margin-left: 8px;
+    }
+    .additional-info .material-icons {
+        font-size: 2.2rem;
+        opacity: 0.8;
+    }
+    h3 {
+        margin-block-start: -0.5em;
+        margin-block-end: 0.5em;
+    }
 }
