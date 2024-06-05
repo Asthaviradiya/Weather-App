@@ -1,4 +1,4 @@
-const apiKey = cb7b6f7cab47d6adea20ca7ada9721a6;
+const apiKey = c43cbe835ec9b8472f14b26b68c842dc;
 async function fetchWeatherData(city) {
     try {
         const response = await fetch(
@@ -9,6 +9,7 @@ async function fetchWeatherData(city) {
         }
         const data = await response.json();
         console.log(data);
+        updateWeatherUI(data);
     }
     catch (error) {
         console.error(error);
