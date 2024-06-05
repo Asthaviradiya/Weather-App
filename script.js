@@ -19,6 +19,7 @@ const cityElement = document.querySelector(".city");
 const temperature = document.querySelector(".temp");
 const windSpeed = document.querySelector(".wind-speed");
 const humidity = document.querySelector(".humidity");
+const visibility = document.querySelector(".visibility-distance");
 
 const descriptionText = document.querySelector(".description-text");
 const date = document.querySelector(".date");
@@ -37,19 +38,19 @@ function updateWeatherUI(data){
     const weatherIconName = getWeatherIconName(data.weather[0].main);
     descriptionIcon.innerHTML = `<i class="material-icons">${weatherIconName}</i>`;
 }
-
 const formElement = document.querySelector(".search-form");
 const inputElement = document.querySelector(".city-input");
 
-formElement.addEventListener("submit", (e) => {
+formElement.addEventListener("submit", function (e) {
     e.preventDefault();
 
     const city = inputElement.value;
-    if (city !== ""){
+    if (city !== "") {
         fetchWeatherData(city);
         inputElement.value = "";
     }
 });
+
 function getWeatherIconName(weatherCondition) {
     const iconMap = {
         Clear: "wb_sunny",
