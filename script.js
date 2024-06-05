@@ -1,20 +1,26 @@
-const apiKey = c43cbe835ec9b8472f14b26b68c842dc;
+
+const apiKey = 'c43cbe835ec9b8472f14b26b68c842dc'
+
+
 async function fetchWeatherData(city) {
     try {
         const response = await fetch(
             `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`
         );
+
         if (!response.ok) {
             throw new Error("Unable to fetch weather data");
         }
         const data = await response.json();
         console.log(data);
+        
+        // console.log(data.visibility);
         updateWeatherUI(data);
-    }
-    catch (error) {
+    } catch (error) {
         console.error(error);
     }
 }
+
 const cityElement = document.querySelector(".city");
 const temperature = document.querySelector(".temp");
 const windSpeed = document.querySelector(".wind-speed");
@@ -25,7 +31,9 @@ const descriptionText = document.querySelector(".description-text");
 const date = document.querySelector(".date");
 const descriptionIcon = document.querySelector(".description i");
 
-function updateWeatherUI(data){
+// fetchWeatherData();
+
+function updateWeatherUI(data) {
     cityElement.textContent = data.name;
     temperature.textContent = `${Math.round(data.main.temp)}`;
     windSpeed.textContent = `${data.wind.speed} km/h`;
@@ -38,6 +46,7 @@ function updateWeatherUI(data){
     const weatherIconName = getWeatherIconName(data.weather[0].main);
     descriptionIcon.innerHTML = `<i class="material-icons">${weatherIconName}</i>`;
 }
+
 const formElement = document.querySelector(".search-form");
 const inputElement = document.querySelector(".city-input");
 
@@ -64,5 +73,6 @@ function getWeatherIconName(weatherCondition) {
         Haze: "cloud",
         Fog: "cloud",
     };
+
     return iconMap[weatherCondition] || "help";
 }
